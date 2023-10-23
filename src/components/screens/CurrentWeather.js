@@ -3,6 +3,7 @@ import {SafeAreaView, StyleSheet, Text, View} from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import Feather from 'react-native-vector-icons/Feather'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
+import RowText from '../RowText'
 //https://levelup.gitconnected.com/integrating-react-native-vector-icon-with-react-native-0-60-and-above-4cad9b9c61c5
 Ionicons.loadFont()
 Feather.loadFont()
@@ -12,22 +13,38 @@ FontAwesome5.getStyledIconSet('regular').loadFont()
 FontAwesome5.getStyledIconSet('solid').loadFont()
 
 const CurrentWeather = () => {
+ const {
+  wrapper,
+  container,
+  temp,
+  feels,
+  highLow,
+  highLowWrapper,
+  bodyWrapper,
+  description,
+  message
+ } = styles
  return (
-  <SafeAreaView style={styles.wrapper}>
-   <View style={styles.container}>
-    <Text style={styles.temp}> 6</Text>
-    <Text style={styles.feels}> Feelts like 5</Text>
+  <SafeAreaView style={wrapper}>
+   <View style={container}>
+    <Text style={temp}> 6</Text>
+    <Text style={feels}> Feelts like 5</Text>
     <Feather name="sun" size={50} />
-    <View style={styles.highLowWrapper}>
-     <Text style={styles.highLow}>High: 8 </Text>
-     <Text style={styles.highLow}>Low : 6</Text>
-    </View>
+    <RowText
+     messageOne={'High: 8 '}
+     messageTwo={'Low: 6 '}
+     containerStyles={highLowWrapper}
+     messageOneStyles={highLow}
+     messageTwoStyles={highLow}
+    />
    </View>
-
-   <View style={styles.bodyWrapper}>
-    <Text style={styles.description}>It's Sunny</Text>
-    <Text style={styles.message}>It's perfect T-shirt weather</Text>
-   </View>
+   <RowText
+    messageOne={"It's Sunny"}
+    messageTwo={"It's perfect T-shirt weather"}
+    containerStyles={bodyWrapper}
+    messageOneStyles={description}
+    messageTwoStyles={message}
+   />
   </SafeAreaView>
  )
 }

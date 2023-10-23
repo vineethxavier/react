@@ -3,13 +3,14 @@ import {View, StyleSheet, Text} from 'react-native'
 
 import UpcomingWeather from './src/components/screens/UpcomingWeather'
 import City from './src/components/screens/City'
+import CurrentWeather from './src/components/screens/CurrentWeather'
 
 const App = () => {
  return (
   <View style={styles.container}>
-   {/* <CurrentWeather /> */}
+   <CurrentWeather />
    {/* <UpcomingWeather /> */}
-   <City />
+   {/* <City /> */}
   </View>
  )
 }
