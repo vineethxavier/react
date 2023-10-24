@@ -1,7 +1,6 @@
 import React from 'react'
 import {View, Text, StyleSheet} from 'react-native'
 import Feather from 'react-native-vector-icons/Feather'
-Feather.loadFont()
 
 const IconText = props => {
  const {iconName, iconColor, bodyText, bodyTextStyles} = props

@@ -5,12 +5,6 @@ import Feather from 'react-native-vector-icons/Feather'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import RowText from '../RowText'
 //https://levelup.gitconnected.com/integrating-react-native-vector-icon-with-react-native-0-60-and-above-4cad9b9c61c5
-Ionicons.loadFont()
-Feather.loadFont()
-FontAwesome5.getStyledIconSet('brand').loadFont()
-FontAwesome5.getStyledIconSet('light').loadFont()
-FontAwesome5.getStyledIconSet('regular').loadFont()
-FontAwesome5.getStyledIconSet('solid').loadFont()
 
 const CurrentWeather = () => {
  const {
