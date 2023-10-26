@@ -11,6 +11,7 @@ const Counter = () => {
    `count changed - this line is printed wn component is loaded or updated, simillaar to componentDidLoad lifecycle`
   )
   return () => {
+   // clean up is called before the next useEffect runs
    console.log(
     ' use effect clean up- this line is printed only when updated, simillar to componentDidUpdate lifecycle'
    )
@@ -50,14 +51,16 @@ const Counter = () => {
      color={'red'}
      title={'increase new count'}
      onPress={() => {
-      setNewCount(newCount + 1)
+      setNewCount(count + 1) // in use effect the dependency is on 'count' but this hook wont trigger the depedency and re-render wont take place
+      setNewCount(newCount + 1) // these two are simillar
      }}
     />
     <Button
      color={'green'}
      title="decrease new count"
      onPress={() => {
-      setNewCount(newCount - 1)
+      setNewCount(count - 1) // in use effect the dependency is on 'count' but this hook wont trigger the depedency and re-render wont take place
+      setNewCount(newCount - 1) // these two are simillar
      }}
     />
    </View>
