@@ -9,10 +9,25 @@ const MyLocation = () => {
  useEffect(() => {
   Geolocation.getCurrentPosition(
    position => {
-    const {latitude, longitude} = position.coords
+    const {
+     latitude,
+     longitude,
+     altitude,
+     accuracy,
+     speed,
+     heading,
+     altitudeAccuracy
+    } = position.coords
+    const timeStamp = position.timestamp
     setLocation({
      latitude,
-     longitude
+     longitude,
+     altitude,
+     accuracy,
+     speed,
+     heading,
+     altitudeAccuracy,
+     timeStamp
     })
    },
    error => {
@@ -27,7 +42,13 @@ const MyLocation = () => {
    {location ? (
     <>
      <Text>Latitude: {location.latitude}</Text>
-     <Text>Latitude: {location.longitude}</Text>
+     <Text>Longitude: {location.longitude}</Text>
+     <Text>Altitude: {location.altitude}</Text>
+     <Text>Accuracy: {location.accuracy}</Text>
+     <Text>Speed: {location.speed}</Text>
+     <Text>Heading: {location.heading}</Text>
+     <Text>AltitudeAccuracy: {location.altitudeAccuracy}</Text>
+     <Text>TimeStamp: {location.timeStamp}</Text>
     </>
    ) : (
     <Text>Loading.!!!</Text>
