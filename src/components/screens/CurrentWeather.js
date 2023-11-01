@@ -4,6 +4,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 import Feather from 'react-native-vector-icons/Feather'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import RowText from '../RowText'
+import {weatherType} from '../../utilities/weatherType'
 //https://levelup.gitconnected.com/integrating-react-native-vector-icon-with-react-native-0-60-and-above-4cad9b9c61c5
 
 const CurrentWeather = () => {
@@ -34,7 +35,7 @@ const CurrentWeather = () => {
    </View>
    <RowText
     messageOne={"It's Sunny"}
-    messageTwo={"It's perfect T-shirt weather"}
+    messageTwo={weatherType['Thunderstorm'].message}
     containerStyles={bodyWrapper}
     messageOneStyles={description}
     messageTwoStyles={message}
