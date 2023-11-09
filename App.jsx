@@ -6,6 +6,7 @@ import Counter from './src/demonstration/Counter'
 
 import {SafeAreaView} from 'react-native'
 import MyLocation from './src/demonstration/MyLocation'
+import GeoLocationTestWithPromise from './src/demonstration/GeoLocationTestWithPromise'
 
 const App = () => {
  const [loading, setLoading] = useState(false)
@@ -18,7 +19,8 @@ const App = () => {
   )
  } else
   return (
-   <MyLocation />
+   //  <MyLocation />
+   <GeoLocationTestWithPromise />
 
    //  <NavigationContainer>
    //   {/* <Tabs /> */}
