@@ -33,7 +33,7 @@ const GeoLocationTestWithPromise = () => {
   getCurrentLatLong()
    .then(res => {
     setLocationInfo(res)
-    console.log('----++++ ', locationInfo?.Latlong)
+    console.log('latitide longitude  ', res?.Latlong)
    })
    .catch(err => {
     console.error(err.message)

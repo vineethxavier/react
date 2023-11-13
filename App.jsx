@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {ActivityIndicator, StyleSheet, View} from 'react-native'
+import {ActivityIndicator, StyleSheet, Text, View} from 'react-native'
 import {NavigationContainer} from '@react-navigation/native'
 import Tabs from './src/components/Tabs'
 import Counter from './src/demonstration/Counter'
@@ -8,9 +8,11 @@ import {SafeAreaView} from 'react-native'
 import MyLocation from './src/demonstration/MyLocation'
 import GeoLocationTestWithPromise from './src/demonstration/GeoLocationTestWithPromise'
 
+import {API_KEY} from '@env'
+
 const App = () => {
  const [loading, setLoading] = useState(false)
-
+ console.log('++++++ KEY => ', API_KEY)
  if (loading) {
   return (
    <View style={styles.container}>
@@ -20,8 +22,10 @@ const App = () => {
  } else
   return (
    //  <MyLocation />
-   <GeoLocationTestWithPromise />
-
+   <SafeAreaView>
+    {/* <GeoLocationTestWithPromise /> */}
+    <Text> key: {API_KEY}</Text>
+   </SafeAreaView>
    //  <NavigationContainer>
    //   {/* <Tabs /> */}
    //  </NavigationContainer>
